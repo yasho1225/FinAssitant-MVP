@@ -1,0 +1,3 @@
+@echo off
+echo Starting FinAssistant API + Frontend...
+.\.venv\Scripts\uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload-exclude "frontend/node_modules" --reload-exclude "frontend/dist"
