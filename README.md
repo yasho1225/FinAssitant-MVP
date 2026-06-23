@@ -110,6 +110,21 @@ cd frontend && npm run dev
 
 Open http://localhost:5173 during development.
 
+## Deploy to Vercel
+
+The repo includes `vercel.json` that:
+- Builds the React frontend (`frontend/dist`)
+- Routes `/api/*` to the FastAPI serverless function (`api/index.py`)
+
+**Vercel environment variables** (Project → Settings → Environment Variables):
+
+| Variable | Required | Notes |
+|----------|----------|-------|
+| `OPENAI_API_KEY` | Optional | Full LLM memos; offline template if unset |
+| `SEC_USER_AGENT` | Recommended | Your email for SEC EDGAR |
+
+Redeploy after pushing. Analysis requests can take 15–60s (yfinance + SEC); Hobby plan has a 10s function timeout — Pro allows up to 60s.
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
