@@ -7,6 +7,7 @@ import { MemoReport } from "./components/MemoReport";
 import { AnalyticsReport } from "./components/AnalyticsReport";
 import { Hero } from "./components/Hero";
 import { IconLogo } from "./components/Icons";
+import { Disclaimer } from "./components/Disclaimer";
 
 type View = "home" | "memo" | "analytics";
 
@@ -115,6 +116,9 @@ export default function App() {
           {view === "home" && !loading && (
             <div className="animate-fade-in">
               <Hero />
+              <div className="mb-8">
+                <Disclaimer />
+              </div>
               <TickerSearch
                 onSubmit={handleSearch}
                 loading={loading}
@@ -146,9 +150,10 @@ export default function App() {
           )}
         </main>
 
-        <footer className="no-print border-t border-ink-800/40 py-8 text-center">
-          <p className="text-[11px] text-ink-600 max-w-md mx-auto leading-relaxed">
-            FinAssistant MVP · Deterministic analytics + AI narrative · Not investment advice
+        <footer className="no-print border-t border-ink-800/40 py-8 text-center px-4">
+          <Disclaimer variant="compact" />
+          <p className="text-[11px] text-ink-600 max-w-md mx-auto leading-relaxed mt-3">
+            FinAssistant MVP · Deterministic analytics + AI narrative
           </p>
         </footer>
       </div>

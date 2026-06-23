@@ -1,6 +1,7 @@
 import type { AnalyticsResponse } from "../types";
 import { MetricsGrid } from "./MetricsGrid";
 import { MarketStrip } from "./MarketStrip";
+import { Disclaimer } from "./Disclaimer";
 
 interface Props {
   data: AnalyticsResponse;
@@ -22,6 +23,7 @@ export function AnalyticsReport({ data }: Props) {
 
   return (
     <div className="space-y-6 animate-fade-in max-w-4xl mx-auto">
+      <Disclaimer variant="inline" />
       <header className="glass-card p-6 md:p-8 shadow-glow relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-gold/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none" />
         <div className="relative">

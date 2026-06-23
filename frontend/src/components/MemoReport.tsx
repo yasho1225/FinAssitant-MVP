@@ -7,6 +7,7 @@ import { BulletList } from "./BulletList";
 import { MarketStrip } from "./MarketStrip";
 import { SectionNav } from "./SectionNav";
 import { PeerComparisonTable, cleanValuationText } from "./PeerComparisonTable";
+import { Disclaimer } from "./Disclaimer";
 
 interface Props {
   data: ResearchResponse;
@@ -54,6 +55,9 @@ export function MemoReport({ data, onPrint }: Props) {
 
   return (
     <div className="animate-fade-in">
+      <div className="mb-5">
+        <Disclaimer variant="inline" />
+      </div>
       {/* Report header */}
       <header className="glass-card p-6 md:p-8 mb-6 shadow-glow relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-teal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
